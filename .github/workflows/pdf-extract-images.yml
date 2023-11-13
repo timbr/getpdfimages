@@ -1,0 +1,20 @@
+name: Extract Images from PDF
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  extract_images:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install Poppler
+      run: sudo apt-get install -y poppler-utils
+
+    - name: Extract Images
+      run: pdfimages -j your_input.pdf extracted_images
