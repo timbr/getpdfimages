@@ -17,7 +17,7 @@ jobs:
       run: sudo apt-get install -y poppler-utils
 
     - name: Extract Images
-      run: pdfimages -j your_input.pdf extracted_images
+      run: pdfimages -j your_input.pdf extracted_images/pdfimage
 
     - name: Archive Extracted Images
       uses: actions/upload-artifact@v2
