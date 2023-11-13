@@ -18,3 +18,9 @@ jobs:
 
     - name: Extract Images
       run: pdfimages -j your_input.pdf extracted_images
+
+    - name: Archive Extracted Images
+      uses: actions/upload-artifact@v2
+      with:
+        name: extracted_images
+        path: extracted_images
